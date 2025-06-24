@@ -1,0 +1,60 @@
+/* Contact.module.css */
+.formContainer {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+.fieldGroup label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.fieldGroup input,
+.fieldGroup textarea {
+  padding: 0.5rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.fieldGroup input:focus,
+.fieldGroup textarea:focus {
+  outline: none;
+  border-color: #3eb489; /* mint accent */
+  box-shadow: 0 0 0 3px rgba(62,180,137, 0.3);
+}
+.primaryButton {
+  padding: 0.75rem clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  background-color: #3eb489; /* mint accent */
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+.primaryButton:hover {
+  background-color: #34a87e;
+}
+.primaryButton:active {
+  transform: scale(0.98);
+}
+.primaryButton:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+/* Responsive: two-column layout on wider screens */
+@media (min-width: 768px) {
+  .formContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Make the message textarea span both columns */
+  .fieldGroup:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
